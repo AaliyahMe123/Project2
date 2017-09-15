@@ -1,0 +1,15 @@
+<h2>Posts by Tag: <%= @category.name %></h2>
+
+<% @sprinkles.each do |sprinkle| %>
+  <article>
+    <h3><%= sprinkle.quote %></h3>
+    <p><%= sprinkle.character %></p>
+    <p><%= sprinkle.show %></p>
+    <% if sprinkle.tags.length > 0 %>
+      <p>tags</p>
+      <% sprinkle.tags.each do |tag| %>
+        <p><%= tag.category.name %></p>
+        <% end %>
+      <% end %>
+    </article>
+  <% end %>
