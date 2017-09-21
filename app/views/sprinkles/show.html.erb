@@ -1,10 +1,16 @@
-<h2><%= @sprinkle.quote %></h2>
-<p><%= @sprinkle.character %></p>
-<p><%= @sprinkle.show %></p>
-
-<% if @sprinkle.tags.length > 0 %>
-<p>tags</p>
-<% @sprinkle.tags.each do |tag| %>
-  <%= tag.category.name %>
-  <% end %>
+<% if @sprinkle.user == current_user %>
+<%= link_to "edit or remove quote", edit_category_sprinkle_path(@category, @sprinkle), :class => "form-link"%>
+<% elsif current_user.try(:admin?) %>
+<%= link_to "edit or remove quote", edit_category_sprinkle_path(@category, @sprinkle), :class => "form-link"%>
 <% end %>
+<div class="quote-author">
+  <% if @sprinkle.users.include? current_user %>
+    <div class="star"><%=link_to "&star;".html_safe, remove_star_category_sprinkle_path(@category, @sprinkle), method: :delete %></div>
+  <% else %>
+    <div class="no-star"><%= link_to "&star;".html_safe, add_star_category_sprinkle_path(@category, @sprinkle), method: :post %></div>
+    <% end %>
+    <div class="stars-count"><%= @sprinkle.stars.count %> stars</div>
+  <button type="button" name="button">who said it?</button>
+    <p class="hidden center"><%= @sprinkle.character %></p>
+    <p class="hidden center"><%= @sprinkle.author %></p>
+  </div>

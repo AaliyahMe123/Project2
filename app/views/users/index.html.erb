@@ -1,0 +1,18 @@
+<main class="profile views">
+
+<h2>quotes you posted</h2>
+
+<div class="transitions-enabled masonry grid">
+  <% @sprinkles.each do |sprinkle| %>
+    <%= link_to category_sprinkle_path(sprinkle.category, sprinkle) do %>
+    <div class="grid-item">
+      <p><%= sprinkle.quote %></p>
+    </div>
+   <% end %>
+<% end %>
+</div>
+
+<% if @sprinkles == [] %>
+<p>you haven't posted any quotes yet</p>
+<% end %>
+</main>

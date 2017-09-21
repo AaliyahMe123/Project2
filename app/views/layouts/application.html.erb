@@ -6,9 +6,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <sprinkle src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></sprinkle>
   </head>
 
   <body>
+    <header>
+      <nav>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

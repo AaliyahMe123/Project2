@@ -1,17 +1,14 @@
-<h2>Posts by Tag: <%= @category.name %></h2>
+<main class="category">
+  <h2><%= @category.name %> quotes</h2>
+    <div class="form-link"><%= link_to "+ new quote", new_category_sprinkle_path(@category)%></div>
 
-<% @sprinkles.each do |sprinkle| %>
-  <article>
-    <h3><%= sprinkle.quote %></h3>
-    <p><%= sprinkle.character %></p>
-    <p><%= sprinkle.show %></p>
-    <% if sprinkle.tags.length > 0 %>
-      <p>tags</p>
-      <% sprinkle.tags.each do |tag| %>
-        <p><%= tag.category.name %></p>
+<div class="transitions-enabled masonry grid">
+    <% @category.sprinkles.order("created_at DESC").each do |sprinkle| %>
+        <%= link_to category_sprinkle_path(@category, sprinkle) do %>
+        <div class= "grid-item">
+          <p><%= sprinkle.quote %></p>
+        </div>
         <% end %>
-      <% end %>
-    </article>
-    <h3><%= link_to "#{sprinkle.quote}", sprinkle_path(sprinkle) %></h3>
-  <% end %>
-<%= link_to "add new sprinkle", new_prinkle_path %>
+    <% end %>
+</div>
+</main>

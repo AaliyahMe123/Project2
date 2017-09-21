@@ -1,0 +1,15 @@
+<h3>form to edit quote</h3>
+
+<%= form_for @category, @sprinkle] do |f| %>
+  <%= f.label :quote %>
+  <%= f.text_feild :quote %>
+  <%= f.label :author %>
+  <%= f.text_feild :author %>
+  <%= f.submit "update" %>
+<% end %>
+
+<br>
+
+<%= form_for [@category, @sprinkle], class: "form-delete", method: :delete do |f| %>
+  <%= f.submit "delete", class: "delete" %>
+  <% end %>

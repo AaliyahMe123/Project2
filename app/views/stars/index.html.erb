@@ -1,0 +1,19 @@
+<main class="profile-views">
+
+<h2>quotes you've starred</h2>
+
+<div class="transitions-enabled masonry grid">
+  <% @stars.each do |star| %>
+    <%= link_to category_sprinkle_path(star.sprinkle.category, star.sprinkle) do %>
+    <div class "grid-item">
+      <p><%= star.sprinkle.quote %></p>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+<% if @stars == [] %>
+<p> you haven't starred any quotes</p>
+<% end %>
+
+</main>

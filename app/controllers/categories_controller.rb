@@ -4,7 +4,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @categories = Category.all
+    @category = Category.find_by_name(params[:id])
     @sprinkles = @category.sprinkles
   end
-end 
+end

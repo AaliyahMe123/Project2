@@ -1,7 +1,10 @@
 <h2>Sprinkles</h2>
-
+<div class="transitions-enabled masonry grid">
 <%= sprinkles.each do |sparkle| %>
-  <p><%= sprinkle.quote %></p>
-  <p><%= sprinkle.character %></p>
-  <p><%= sprinkle.show %></p>
+  <!-- <p><%= sprinkle.quote %></p>
+  <p><%= sprinkle.character %></p> -->
+  <div class="grid-item"><p><%= link_to "#{sprinkle.quote}",sprinkle_path(sprinkle) %></p></div>
 <% end %>
+
+</div>
+ <%= link_to "add new quote", new_sprinkle_path %>

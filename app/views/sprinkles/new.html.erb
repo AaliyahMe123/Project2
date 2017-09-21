@@ -1,1 +1,9 @@
-<h2>Add New Form Page</h2>
+<h2>Add New Quote Page</h2>
+
+<%= form_for [@category, @sprinkle] do |f| %>
+  <%= f.label :quote %>
+  <%= f.text_field :quote %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.submit "Add Quote" %>
+<% end %>

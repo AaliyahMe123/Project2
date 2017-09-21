@@ -1,7 +1,19 @@
-<h1>Sprinkles</h1>
+<div class="main-home">
 
-<h2>categories</h2>
+  <div class="home-content">
+    <div class="home-typewriter">
+      <div class="typewriter">
+        <h1>sprinkles</h1>
+      </div>
+    </div>
 
-<% @categories.each do |category| %>
-  <p><%= link_to "#{category.name}", category_path(category) %></p>
-<% end %>
+    <h2>view, guess, and share your favorite quotes</h2>
+
+    <div class="home-categories">
+      <% @categories.each do |category| %>
+        <%= link_to "#{category.name}", category_path(category) %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

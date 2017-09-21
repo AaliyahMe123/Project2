@@ -1,15 +1,132 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/*files in this directory. Styles in this file should be added after the last require_* statement.
+  * It is generally better to create a new file per style scope.
+  *
++ *= require 'masonry/centered'
++ *= require 'masonry/infinitescroll'
++ *= require 'masonry/transitions'
+  *= require_tree .
+  *= require_self
+  */
+  * {box-sizing: border-box;}
+body{
+  text-transform: lowercase;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+a{
+  color: black;
+}
+.center{
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+.nav-left{
+  float: left;
+  padding: 10px 20px;
+}
+.nav-right{
+  float: right;
+  padding: 10px 20px;
+}
+.user-info{
+  background-color: rgba(255, 0, 0, 0.5);
+  clear: both;
+  overflow: auto;
+  font-size: 16px;
+}
+.user-info a{
+  color: black;
+  border-right: 1px solid red;
+  padding-right: 10px;
+}
+.user-info a:last-child{
+  border: none;
+}
+.flash{
+  padding: 5px 20px;
+  font-size: 16px;
+  background-color: rgba(238,238,238, 0.5);
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  margin-top: 0;
+}
+.category, .profile-views{
+  margin-top: 3em;
+}
+.profile-views h2{
+  margin-bottom: 2.3em;
+}
+.grid{
+  margin-left: 20px;
+}
+.grid-item {
+  width: 200px;
+  box-shadow: 0 2px 1px rgba(0,0,0,0.3);
+  margin-bottom: 2px;
+}
+.home-content{
+  margin: 18% auto;
+  text-align: center;
+}
+.grid-item a {
+  color: black;
+  text-decoration: none;
+}
+.grid-item p {
+  padding: 5px 10px;
+}
+.grid-item:hover{
+  box-shadow: 0 3px 3px rgba{0,0,0,0.4}
+}
+
+.category-quotes{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.quote{
+  align-self: flex-start;
+  text-align: left;
+  background-color: rgb();
+  padding: 20px;
+  margin: 5px;
+}
+
+p{
+  font-family: sans-serif;
+  font-size: 20px;
+}
+h1, h2, h3{
+  font-family: sans-serif;
+  text-align: center;
+  /*text-transform: uppercase;
+  padding: 5px;
+  margin: 0 3px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);*/
+}
+h1{
+  font-size: 4em;
+}
+.hidden{
+  display: none;
+}
+button{
+  display: block;
+  margin: 30px auto;
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  box-shadow: 1px 3px 6px rgba(0,0,0,0.3);
+  font-family: sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+button:active{
+  transform: translateY(2px);
+  box-shadow: 1px 5px 8px rgba(0,0,0,0.5)
+}
+li:hover{
+  box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+}
